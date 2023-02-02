@@ -25,6 +25,16 @@
             return decodeURIComponent(name[1]);
     }
 
+    function convertTimeToEpoch(timeString) {
+        var dateTime = new Date(timeString + " PST");
+        return dateTime.getTime()/1000;
+    }
+
+    document.getElementById("case-number").innerHTML = get("case");
+    document.getElementById("start-time").innerHTML = get("stime");
+    document.getElementById("end-time").innerHTML = get("etime");
+    document.getElementById("start-epoch").innerHTML = convertTimeToEpoch(get("stime"));
+    document.getElementById("end-epoch").innerHTML = convertTimeToEpoch(get("etime"));
 </script>
 
 </html>
