@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NS CWT Bot</title>
 </head>
+
 <body>
-    hello
+    <div id="output">
+        Case <b id="case-number"></b>
+        <ul>
+            <li>Start Date and Time: <b id="start-time"></b></li>
+            <li>End Date and Time: <b id="end-time"></b></li>
+            <li>Start Time(Epoch): <b id="start-epoch"></b></li>
+            <li>End Time(Epoch): <b id="end-epoch"></b></li>
+        </ul>
+    </div>
 </body>
+<script>
+    function get(name) {
+        if (name = (new RegExp('[?&]' + encodeURIComponent(name) + '=([^&]*)')).exec(location.search))
+            return decodeURIComponent(name[1]);
+    }
+
+</script>
+
 </html>
